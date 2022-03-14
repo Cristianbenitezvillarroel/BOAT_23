@@ -36,7 +36,7 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>{{ $t('prueba') }}</v-list-item-title>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -48,7 +48,7 @@ export default {
   data () { 
     return {
       items: [
-        { title: 'Datos del evento', icon: 'mdi-format-list-checks', to: '/' },
+        { title: 'Eventos', icon: 'mdi-format-list-checks', to: '/' },
       ], 
     }
   }
