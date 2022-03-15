@@ -7,54 +7,59 @@ export default {
   getEventData(user) {
     let sbus = [
       {
-        "name": "SBU-Western-Southern-Europe",
-        "BUs": [
+        name: 'SBU-Western-Southern-Europe',
+        children: [
           {
-            "name": "BU-Spain",
-            "events": [
+            name: 'BUs',
+            children: [
               {
-                "name": "Event 1",
-                "duration": "30m"
+                name: 'Event 1',
+                duration: "30m"
               },
               {
-                "name": "Event 2",
-                "duration": "120m"
+                name: 'Event 2',
+                duration: "120m"
               }
-            ]
+            ],
           },
-          {
-            "name": "BU-Portugal",
-            "events": [
-              {
-                "name": "Event 1",
-                "duration": "30m"
-              },
-              {
-                "name": "Event 2",
-                "duration": "120m"
-              }
-            ]
-          }
-        ]
+        ],
       },
       {
-        "name": "SBU-Canada",
-        "BUs": [
+        name: 'SBU-Portugal',
+        children: [
           {
-            "name": "BU2",
-            "events": [
+            name: 'BUs',
+            children: [
               {
-                "name": "Event 10",
-                "duration": "120m"
+                name: 'Event 1',
+                duration: "30m"
               },
               {
-                "name": "Event 20",
-                "duration": "120m"
+                name: 'Event 2',
+                duration: "120m"
               }
-            ]
-          }
-        ]
-      }
+            ],
+          },
+        ],
+      },
+      {
+        name: 'SBU-Canada',
+        children: [
+          {
+            name: 'BUs',
+            children: [
+              {
+                name: 'Event 10',
+                duration: "120m"
+              },
+              {
+                name: 'Event 20',
+                duration: "120m"
+              }
+            ],
+          },
+        ],
+      },
     ]
     return sbus
   },

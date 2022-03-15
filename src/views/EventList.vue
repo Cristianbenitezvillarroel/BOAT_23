@@ -1,30 +1,26 @@
 <template>
 
-  <v-card>
+  <v-card class="ma-7">
     <v-toolbar
-      color="primary"
+      color="#a82465"
       dark
       flat
     >
-      <v-icon>mdi-silverware</v-icon>
-      <v-toolbar-title>Event List</v-toolbar-title>
+      <v-icon>mdi-format-list-bulleted</v-icon>
+      <v-toolbar-title>Listado de eventos</v-toolbar-title>
     </v-toolbar>
 
     <v-row>
       <v-col>
         <v-card-text>
           <v-treeview
+            :active.sync="active"
             v-model="tree"
-            :load-children="getEventData"
             :items="sbuList"
-            selected-color="indigo"
-            open-on-click
-            selectable
-            return-object
             expand-icon="mdi-chevron-down"
-            on-icon="mdi-bookmark"
-            off-icon="mdi-bookmark-outline"
-            indeterminate-icon="mdi-bookmark-minus"
+            activatable
+            item-key="name"
+            open-on-click
           >
           </v-treeview>
         </v-card-text>
@@ -42,36 +38,14 @@
             key="title"
             class="text-h6 font-weight-light grey--text pa-4 text-center"
           >
-            Select your favorite breweries
+            Datos del evento
           </div>
           
-          <div>
+          <!-- <div>
             <v-btn> Cancelar evento </v-btn>
             <v-btn> Cambiar encuesta de pre-registro </v-btn>
-          </div>
-
-          <v-scroll-x-transition
-            group
-            hide-on-leave
-          >
-            <v-chip
-              v-for="(selection, i) in tree"
-              :key="i"
-              color="grey"
-              dark
-              small
-              class="ma-1"
-            >
-              <v-icon
-                left
-                small
-              >
-                mdi-beer
-              </v-icon>
-              
-              {{ selection.name }}
-            </v-chip>
-          </v-scroll-x-transition>
+          </div> -->
+          <p>{{ selected }}</p>
         </v-card-text>
       </v-col>
     </v-row>
@@ -109,26 +83,33 @@ export default {
   },
   data() {
     return {
-      "isShowTree": false,
-      "tree": [],
-      "sbuList": []
+      active: [],
+      isShowTree: false,
+      tree: [],
+      sbuList: []
     }
   },
   created () {
     this.getEventData()
   },
+  computed: {
+    selected () {
+        if (!this.active.length) return undefined
+
+        return this.active[0]
+      },
+  },
+  
   methods: {
     async getEventData() {
       try {
         this.sbuList = await Api.getEventData();
-        debugger
       } catch(error) {
-        debugger
         // this.checkWhatErrorIs(error.response.status);
       }
-      debugger
       // console.log(data)
-    }
+    },
   }
 }
 </script>
+

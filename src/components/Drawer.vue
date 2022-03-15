@@ -48,7 +48,11 @@ export default {
   data () { 
     return {
       items: [
-        { title: 'Eventos', icon: 'mdi-format-list-checks', to: '/' },
+        // { title: 'Home', icon: 'mdi-format-list-checks', to: '/' },
+        { title: this.$t('eventList'), 
+          icon: 'mdi-format-list-bulleted', 
+          to: '/eventlist'
+        },
       ], 
     }
   }

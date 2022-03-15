@@ -1,14 +1,14 @@
 <template>
   <div>
     <v-app-bar
-      dark
       app
       dense
+      elevation="0"
+      color="transparent"
     >
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="90deg, rgba(227,25,55,1) 0%, rgba(168,36,101,1) 60%, rgba(82,54,171,1) 100%"
         ></v-img>
       </template>
 
