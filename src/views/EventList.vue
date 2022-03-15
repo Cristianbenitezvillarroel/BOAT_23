@@ -46,6 +46,8 @@
           </div>
           
           <div>
+            <btn btntext="cancelar" mdicon="mdi-cancel"></btn>
+            <btn btntext="Cambiar encuesta de pre-registro" color="info"></btn>
             <v-btn> Cancelar evento </v-btn>
             <v-btn> Cambiar encuesta de pre-registro </v-btn>
           </div>
@@ -106,6 +108,7 @@
 import Api from '@/api/servicesMocked';
 export default {
   components: {
+    btn: () => import('@/components/Button')
   },
   data() {
     return {

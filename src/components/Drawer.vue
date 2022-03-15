@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer 
-    v-model="$store.state.drawer"
+    v-model="isShowDrawer"
     :mobile-breakpoint="760"
     app
   >
@@ -44,13 +44,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   data () { 
     return {
       items: [
-        { title: 'Eventos', icon: 'mdi-format-list-checks', to: '/' },
+        { title: 'Eventos', icon: 'mdi-format-list-checks', to: '/eventlist' },
       ], 
     }
-  }
+  },
+  computed: {
+    ...mapState('application', ['isShowDrawer'])
+  },
 }
 </script> 

@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import application from '@/store/modules/application.js'
 
 Vue.use(Vuex)
 
+function initialState() {
+  return {}
+}
+
 export default new Vuex.Store({
-  state: {
-    drawer: null,
-    appLanguage: '',
-  },
+  state: initialState,
   mutations: {
   },
-  actions: {
-  },
   modules: {
+    application
   }
 })

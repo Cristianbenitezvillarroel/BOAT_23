@@ -12,7 +12,7 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon @click="$store.state.drawer = !$store.state.drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="isShowDrawer = !isShowDrawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Page title</v-toolbar-title>
 
@@ -24,3 +24,12 @@
     </v-app-bar>
   </div>
 </template>
+
+<script>
+import { mapState } from 'vuex';
+export default {
+  computed: {
+    ...mapState('application', ['isShowDrawer'])
+  },
+}
+</script> 
