@@ -80,6 +80,7 @@
 import Api from '@/api/servicesMocked';
 export default {
   components: {
+    btn: () => import('@/components/Button')
   },
   data() {
     return {

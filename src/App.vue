@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <drawer />
-    <app-bar />
+    <drawer v-if="!isLogin" />
+    <app-bar v-if="!isLogin" />
     <v-main>
       <router-view/>
     </v-main>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -16,7 +17,9 @@ export default {
     drawer: () => import('@/components/Drawer'),
     appBar: () => import('@/components/AppBar')
   },
-
+  computed: {
+    ...mapState('application', ['isLogin'])
+  },
   data () {
     return {
     }
