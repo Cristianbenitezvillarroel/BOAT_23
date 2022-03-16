@@ -66,7 +66,6 @@ export default {
     // }
     // Mocked login
     login() {
-      this.$store.commit('application/isLogin', false);
       this.$router.push({ name: 'EventList' });
     }
   }

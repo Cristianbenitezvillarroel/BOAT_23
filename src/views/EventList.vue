@@ -2,11 +2,10 @@
 
   <v-card class="ma-7">
     <v-toolbar
-      color="#a82465"
+      color="#5236ab"
       dark
       flat
     >
-      <v-icon>mdi-format-list-bulleted</v-icon>
       <v-toolbar-title>Listado de eventos</v-toolbar-title>
     </v-toolbar>
 
@@ -21,6 +20,7 @@
             activatable
             item-key="name"
             open-on-click
+            dense
           >
           </v-treeview>
         </v-card-text>

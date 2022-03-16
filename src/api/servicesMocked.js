@@ -31,11 +31,11 @@ export default {
             name: 'BUs',
             children: [
               {
-                name: 'Event 1',
+                name: 'Event 3',
                 duration: "30m"
               },
               {
-                name: 'Event 2',
+                name: 'Event 4',
                 duration: "120m"
               }
             ],

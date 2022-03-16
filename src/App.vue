@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <drawer v-if="!isLogin" />
-    <app-bar v-if="!isLogin" />
+    <drawer v-if="!$route.path.includes('login')" />
+    <app-bar v-if="!$route.path.includes('login')" />
     <v-main>
       <router-view/>
     </v-main>

@@ -1,7 +1,6 @@
 function initialApplicationState() {
   return {
-    isLogin: true,
-    isShowDrawer: null,
+    isShowDrawer: true,
   }
 }
 
@@ -9,8 +8,8 @@ const application = {
   namespaced: true,
   state: initialApplicationState,
   mutations: {
-    isLogin(state, visible) {
-      state.isLogin = visible;
+    isShowDrawer(state, visible) {
+      state.isShowDrawer = visible;
     },
   }
 };
